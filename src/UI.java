@@ -73,5 +73,16 @@ public class UI {
         for(Stream s: sd.sucheKunde("Nils Neuer").getMeineStreams()){
             System.out.println("\t" + s.getStreamId());
         }
+
+
+        // Test der Statistikfunktion aus Aufgabe 4
+        Datum vonDatum = new Datum("01.01.2025");   // Startdatum der Suche
+        Datum bisDatum = new Datum();               // Enddatum der Suche (Heute)
+
+        System.out.println("\n\nStatistiken:");
+        for (Kunde kunde : sd.getKunden()) {
+            int anzahlStreams = sd.statistik(kunde.getName(), vonDatum, bisDatum);
+            System.out.println("Anzahl Streams von " + kunde.getName() + " im Zeitraum vom " + vonDatum.toString() + " bis " + bisDatum.toString() + ": " + anzahlStreams);
+        }
     }
 }

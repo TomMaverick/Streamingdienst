@@ -19,7 +19,9 @@ public class Stream{
 
     public Kunde getEmpfaenger(){
         return empfaenger;
-    } 
-  
-    // Methoden
+    }
+
+    public Datum getDatum() {
+        return zeitstempel;
+    }
 }
